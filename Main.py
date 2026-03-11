@@ -2,7 +2,7 @@ import random
 from gtts import gTTS
 import os
 import platform
-
+#use pip install if you don't got the imports working
 questions: list = [
         "¿Has hecho ejercicio con tu amigo?",
         "¿Has tenido un entrenador o un nutricionista?",
@@ -14,15 +14,13 @@ questions: list = [
         "¿Habías comido una merienda antes de llegar a esta clase?",
         "¿Te habías mantenido en forma durante el invierno?",
         "¿Habías estudiado antes de tomar este examen?"
-]
+        ]   
 def playRandomQuestion(question: list) -> None: 
     question: str = random.choice(questions)
+    tts = gTTS(text=question, lang='es', slow=False)  
+    audio_file = "question.mp3"
     print(question)
 
-    tts = gTTS(text=question, lang='es', slow=False)  
-
-
-    audio_file = "question.mp3"
     tts.save(audio_file)
 
     if platform.system() == "Windows": 
