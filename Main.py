@@ -14,7 +14,7 @@ questions: list = [
         "¿Habías comido una merienda antes de llegar a esta clase?",
         "¿Te habías mantenido en forma durante el invierno?",
         "¿Habías estudiado antes de tomar este examen?"
-    ]
+]
 def playRandomQuestion(question: list) -> None: 
     question: str = random.choice(questions)
     print(question)
